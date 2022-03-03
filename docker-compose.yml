@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  dockermon:
+    container_name: dockermon
+    image: webfreakeric/dockermon:latest
+    command: /bin/bash /app/dockermon-app/start.sh
+    restart: always
+    env_file: ./.env
+    deploy:
+      labels:
+        com.docker.compose.project: 'dockermon'
+    environment:
+      BACKEND_WS_PORT: $BACKEND_WS_PORT
+      BACKEND_API_PORT: $BACKEND_API_PORT
+      FROTEND_PORT: $FRONTEND_PORT
+      WORKER_HOST_ADDRESS: $WORKER_HOST_ADDRESS
+      HOST_LAUNCHER_PORT: $HOST_LAUNCHER_PORT
+      MYSQL_ROOT_PASSWORD: $MYSQL_DEV_PW
+      MYSQL_DATABASE: $MYSQL_DEV_DB
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      TZ: America/New_York
+      ENABLE_GIT_UPDATE: $ENABLE_GIT_UPDATE
+    ports:
+      #- $MYSQL_LOCAL_PORT:$MYSQL_DOCKER_PORT
+      - $FRONTEND_PORT:3800
+      - $BACKEND_API_PORT:$BACKEND_API_PORT
+      - $BACKEND_WS_PORT:$BACKEND_WS_PORT
+    volumes:
+      # - dockermon_db-config:/etc/mysql
+      - dockermon_db-data:/var/lib/mysql
+      - dockermon_node_modules_fe:/app/dockermon-app/frontend/node_modules
+      - dockermon_node_modules_be:/app/dockermon-app/backend/node_modules
+      # - ./db/backup/files/:/data_backup/data
+    logging:
+      driver: $DOCKERMON_LOGGING
+    cap_add:
+      - SYS_NICE # CAP_SYS_NICE
+
+volumes:
+  dockermon_db-data:
+  dockermon_node_modules_fe:
+  dockermon_node_modules_be:

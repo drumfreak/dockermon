@@ -1,0 +1,63 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+
+a:link,
+a:visited,
+a:active {
+    color: #2097ff;
+}
+
+div.highlighter-rouge, figure.highlight {
+    background-color: rgba(16, 14, 34, 0.99) !important;
+    border-left: 8px solid #216f00 !important;
+}
+
+nav .nav__list a,
+nav .nav__list a:link,
+nav .nav__list a:active,
+nav .nav__list a:visited {
+    color: #2097ff;
+}
+
+.toc {
+    background: #191d26 !important;
+}
+
+.initial-content {
+    background: #050611 !important;
+}
+
+.search__toggle  {
+  color: #3392ff !important;
+}
+
+.toc header .nav__title {
+    background-color: #3392ff !important;
+}
+
+.masthead {
+    background-color: #000 !important;
+}
+
+.masthead__inner-wrap {
+    background-color: transparent !important;
+}
+
+.masthead__menu {
+    background-color: transparent !important;
+}
+
+nav#site-nav.greedy-nav {
+    background: transparent !important;
+}
+
+.page__content h2 {
+    margin-top: 0px !important;
+}

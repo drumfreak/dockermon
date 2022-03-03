@@ -1,0 +1,12 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "./node_modules/**/node_modules", "frontend/**", "dist/**", "src/*", "src/app/**", "out/**"],
+  "verbose": false,
+  "events": {
+    "restart": ""
+  },
+  "ext": "js,json,ts",
+  "execMap": {
+    "node": "--trace-warnings"
+  }
+}

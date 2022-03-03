@@ -1,0 +1,44 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /dockermon-inspiration
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+
+# documentation links
+docs:
+  - title: Getting Started
+    children:
+      - title: "Readme"
+        url: /
+      - title: "Features"
+        url: /dockermon-features/
+      - title: "Host Launcher"
+        url: /dockermon-host-launcher/
+      - title: "socat Dependency"
+        url: /dockermon-socat/
+
+  - title: More
+    children:
+    - title: "Docker Image"
+      url: /dockermon-container-build/
+    - title: "Dockermon Github Updates"
+      url: /dockermon-container-build/
+    - title: "Remote Host Management"
+      url: /dockermon-remote-hosts/
+    - title: "Container Init Process"
+      url:  /dockermon-init/
+    - title: "Backend Architecture"
+      url: /dockermon-backend/
+    - title: "Frontend Architecture"
+      url: /dockermon-frontend/
+    - title: "Inspiration"
+      url: /dockermon-inspiration/
