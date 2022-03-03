@@ -43,6 +43,7 @@ The first step is to start off in terminal in a directory and clone [this repo](
 git clone https://github.com/drumfreak/dockermon.git
 cd dockermon
 cp .env.sample .env
+npm install
 ```
 Now you've got the code. Let's do something with it.
 
