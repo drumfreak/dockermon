@@ -15,13 +15,12 @@ sidebar:
     nav: "docs"
 ---
 
-![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-preview.png?raw=true)
-
-<hr />
 
 <h2 align="center">
  Dockermon - Docker Monitoring and Management
 </h2>
+
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-preview.png?raw=true)
 
 Dockermon is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. This project also has a Companion Node/Nest "Host Launcher" App that runs to assist in managing docker. 
 
