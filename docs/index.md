@@ -128,11 +128,10 @@ Once you see the backend colorfully logging, you can access the web interface at
 
 The initial login details are as follows:
 
-| Login      |  |
+| Login      |  Credentials  |
 | ----------- | ----------- |
 | username      | `whale@dockermon.com` |
 | password   | `dockermon` |
-
 
 <hr />
 
