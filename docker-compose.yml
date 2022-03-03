@@ -2,7 +2,7 @@ version: '3.8'
 services:
   dockermon:
     container_name: dockermon
-    image: webfreakeric/dockermon:latest
+    image: webfreakeric/dockermon-monitor:latest
     command: /bin/bash /app/dockermon-app/start.sh
     restart: always
     env_file: ./.env
