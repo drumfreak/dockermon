@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-host-launcher
+permalink: /dockermon-host-launcher/
 title: "Dockermon Host Launcher"
-toc: true
+toc: false
 ---
 
 <h3>Optional Host Launcher - The Source code included here</h3>

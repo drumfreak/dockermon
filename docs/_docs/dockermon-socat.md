@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-socat
+permalink: /dockermon-socat/
 title: "Dockermon socat"
-toc: true
+toc: false
 ---
 
 <h2 align="center">

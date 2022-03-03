@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-backend
+permalink: /dockermon-backend/
 title: "Dockermon Backend Architecture"
-toc: true
+toc: false
 ---
 
 <h2 align="center">

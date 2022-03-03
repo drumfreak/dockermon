@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-frontend
+permalink: /dockermon-frontend/
 title: "Dockermon Frontend Architecture"
-toc: true
+toc: false
 ---
 
 <h2 align="center">

@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-container-build
+permalink: /dockermon-container-build/
 title: "Docker Image Build Process"
-toc: true
+toc: false
 ---
 <h2 align="center">
  Dockermon Container / Image Build Details

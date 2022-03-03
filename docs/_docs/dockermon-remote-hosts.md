@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-remote-hosts
+permalink: /dockermon-remote-hosts/
 title: "Dockermon Remote Host Monitoring"
-toc: true
+toc: false
 ---
 
 <h2 align="center">

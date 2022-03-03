@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-remote-updates
+permalink: /dockermon-remote-updates/
 title: "Dockermon Remote Updates"
-toc: true
+toc: false
 ---
 <h2 align="center">
  Dockermon Container Remote Github Updates

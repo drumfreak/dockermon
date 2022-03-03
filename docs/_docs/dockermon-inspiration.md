@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-inspiration
+permalink: /dockermon-inspiration/
 title: "Dockermon Inspiration"
-toc: true
+toc: false
 ---
 
 <hr />

@@ -1,7 +1,7 @@
 ---
-permalink: /dockermon-features
+permalink: /dockermon-features/
 title: "Dockermon Features"
-toc: true
+toc: false
 ---
 
 <h2 align="center">
