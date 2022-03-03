@@ -24,7 +24,7 @@ sidebar:
 
 Dockermon is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. This project also has a Companion Node/Nest "Host Launcher" App that runs to assist in managing docker. 
 
-The Docker Hub Image [dockermon:latest](https://hub.docker.com/repository/docker/webfreakeric/dockermon) runs self contained (mostly, socat needed) and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41) through Sockets and HTTP requests.
+The Docker Hub Image [webfreakeric/dockermon:latest](https://hub.docker.com/repository/docker/webfreakeric/dockermon) runs self contained (mostly, socat needed) and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41) through Sockets and HTTP requests.
 
 Dockermon has worker jobs that collect stats for analyzing your containers. There's an intuitive interface and backend API that allows you to create, maintain, monitor, manage and do just about anything you need with Docker containers, images, volumes, networks, and various aspects of your Docker setup. Multi and Remote host control and monitoring is also possible!
 
@@ -75,7 +75,7 @@ npm install -g socat
 npm run socat
 ```
 
-> Note: the npm run socat command above is in the package.json. It runs the socat command for you in the background and you must remember to run this anytime you reobot. The command is as follows. Do not run this command below. This is what is being run by `npm run socat` for your reference:
+> Note: the npm run socat command above is in the package.json. It runs the socat command for you in the background and you must remember to run this anytime you reboot. The command is as follows. Do not run this command below. This is what is being run by `npm run socat` for your reference:
 
 ``` bash
 socat TCP-LISTEN:2375,reuseaddr,fork UNIX-CLIENT:$HOME/Library/Containers/com.docker.docker/Data/docker.raw.sock
@@ -91,9 +91,9 @@ Once socat is running, dockermon can now connect to your Docker HTTP Engine.
 
 ### 4. Create Dockermon Docker Container
 
-The easiest way is to git clone as mentioned earlier and run docker-compose. This will set up a docker container with everything you need to run dockermon, except the Host Launcher which is later in this documentation.
+The easiest way setup your dockermon container is to git clone the repo as mentioned earlier and run docker-compose. If you've followed the steps so far, you have the repo and are ready.
 
-Dockermon will expose the following ports. However, MySQL, Redis, and other service ports will be closed and only used internally.
+> Dockermon will expose the following ports. However, MySQL, Redis, and other service ports will be closed and only used internally.
 
 | Service      |  Port |
 | ----------- | ----------- |
@@ -138,6 +138,8 @@ The initial login details are as follows:
 
 What is this? - [Dockermon Host Launcher - Mac OS](https://drumfreak.github.io/dockermon/dockermon-host-launcher) is a utility Nest JS web socket server app that runs on your host machine for the web interface to mimic Docker Desktop launch Terminal, Finder and docker commands and etc. This only works on the local machine and expoes port `3801` by default. If you are remote monitoring a Docker instance you will not be able to launch terminals, open folders, etc. 
 
+> Windows implementation of this host launcher will be available in future releases.
+
 > This code is Open Source and available in [this repo](https://github.com/drumfreak/dockermon) for your sanity. Or [read here](https://drumfreak.github.io/dockermon/dockermon-host-launcher).
 
 To run the code in the `git clone` earlier, inside the `dockermon` diretory, run:
@@ -148,12 +150,11 @@ npm run build
 npm start
 ```
 
-Tip add an &amp; at the end of npm run start: <b>npm run start &amp;</b> if you wish to run the host launcher in the background. If you wish to watch the output of the Host Launcher, run <b>npm run start</b> instead.
+> Tip add an &amp; at the end of npm run start: <b>npm run start &amp;</b> if you wish to run the host launcher in the background. If you wish to watch the output of the Host Launcher, run <b>npm run start</b> instead.
 
 You should now see docker host launcher running on port 3801. You can change this port but it is not recommended.
 
 <hr />
-There's really nothing else to do except test and use it. Launch Dockermon and attempt to launch a terminal on your local running docker host containers.
 
 ## Parting Notes
 
@@ -176,7 +177,7 @@ Enjoy!
 - [Dockermon Container Image Build](https://drumfreak.github.io/dockermon/dockermon-container-build)
 - [Dockermon Container Init Process](https://drumfreak.github.io/dockermon/dockermon-container-init)
 - [Dockermon Container Github Updates](https://drumfreak.github.io/dockermon/dockermon-remote-updates)
-- [Dockermon Remote Host Management](https://drumfreak.github.io/dockermon/dockermon-container-remote-hosts)
+- [Dockermon Remote Host Management](https://drumfreak.github.io/dockermon/dockermon-remote-hosts)
 - [Dockermon Host Launcher - Mac OS](https://drumfreak.github.io/dockermon/dockermon-host-launcher)
 
 <hr />
