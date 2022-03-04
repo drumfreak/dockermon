@@ -7,11 +7,12 @@ import {
   WebSocketGateway,
   WebSocketServer,
 } from '@nestjs/websockets';
-import { Logger } from '@nestjs/common';
+import { Logger, UseGuards } from '@nestjs/common';
 import { Server, Socket } from 'socket.io';
 import { promisify } from 'util';
 import { exec } from 'child_process';
 import 'dotenv/config';
+import EventsGuard from './events.guard';
 
 const port: any = process.env.HOST_LAUNCHER_PORT || 3801;
 @WebSocketGateway(Number(port), {
@@ -31,6 +32,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayConnection, 
   private readonly logger = new Logger(EventsGateway.name);
   // constructor() {}
 
+  @UseGuards(EventsGuard)
   @SubscribeMessage('identity')
   async identity(@MessageBody() data: number): Promise<number> {
     this.logger.log('------> Identify <------ ', ' Data: ', data);
@@ -42,8 +44,9 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayConnection, 
     this.logger.log('------> Ping <------ ', ' Hello ', client.id);
   }
 
+  @UseGuards(EventsGuard)
   @SubscribeMessage('openTerminal')
-  async openTerminal(@MessageBody() data: any): Promise<number> {
+  async openTerminal(@MessageBody() data: any, @ConnectedSocket() client: Socket): Promise<number> {
     if (!data.containerId) return;
     this.logger.log('------> Launching Terminal <------ ', ' Container: ', data.containerId);
     const cmd = `osascript -e 'tell app "Terminal" to do script "docker exec -it ${data.containerId} /bin/sh"' && osascript -e 'tell application "Terminal" to activate'`;
@@ -51,6 +54,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayConnection, 
     return null;
   }
 
+  @UseGuards(EventsGuard)
   @SubscribeMessage('openFinderPath')
   async openFinderPath(@MessageBody() data: any): Promise<number> {
     if (!data.filePath) return;
@@ -60,6 +64,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayConnection, 
     return null;
   }
 
+  @UseGuards(EventsGuard)
   @SubscribeMessage('openVSCodePath')
   async openVSCodePath(@MessageBody() data: any): Promise<number> {
     if (!data.filePath) {
@@ -71,6 +76,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayConnection, 
     return null;
   }
 
+  @UseGuards(EventsGuard)
   @SubscribeMessage('tailLogs')
   async tailLogs(@MessageBody() data: any): Promise<number> {
     this.logger.log('------> Launching Terminal for Logs <------ ', ' Container: ', data.containerId);
