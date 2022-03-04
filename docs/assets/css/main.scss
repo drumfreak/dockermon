@@ -27,11 +27,12 @@ nav .nav__list a:visited {
 }
 
 .toc {
+    margin-top:120px !important;
     background: #191d26 !important;
 }
 
 .initial-content {
-    background: #050611 !important;
+    background: #0d1117 !important;
 }
 
 .search__toggle  {
@@ -44,6 +45,14 @@ nav .nav__list a:visited {
 
 .masthead {
     background-color: #000 !important;
+}
+
+.masthead a,
+.masthead a:link,
+.masthead a:active,
+.masthead a:visited
+{
+    color: rgb(222, 222, 222) !important;
 }
 
 .masthead__inner-wrap {
