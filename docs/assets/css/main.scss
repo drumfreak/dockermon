@@ -56,13 +56,32 @@ nav .nav__list a:visited {
     clear: both;
 }
 
-
 .search__toggle  {
   color: #3392ff !important;
 }
 
-.navicon {
+.greedy-nav__toggle:hover .navicon, .greedy-nav__toggle:hover .navicon:before, .greedy-nav__toggle:hover .navicon:after {
+    background: #3392ff !important;
+}
+
+.greedy-nav__toggle:hover .navicon, 
+.greedy-nav__toggle:hover .navicon:before, 
+.greedy-nav__toggle:hover .navicon:after {
     color: #3392ff !important;
+}
+
+.navicon {
+    background: #3392ff !important;
+}
+
+.navicon:before, .navicon:after {
+    background: #3392ff !important;
+}
+
+.nav__list label {
+    background: #3392ff !important;
+    color: #FFF;
+    align-self: right;
 }
 
 .toc header .nav__title {
