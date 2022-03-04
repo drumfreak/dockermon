@@ -52,7 +52,7 @@ The following are estimated file sizes without data in the database as of versio
 
 .env file
 
-```
+``` bash
 DOCKERMON_LOGGING="json-file"
 DOCKERMON_BACKEND_WS_PORT=3811
 DOCKERMON_BACKEND_API_PORT=3810
@@ -77,7 +77,7 @@ MYSQL_DEV_HOST="localhost"
 
 docker-compose.yml
 
-```
+``` bash
 version: '3.8'
 services:
   dockermon:

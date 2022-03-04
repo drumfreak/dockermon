@@ -40,9 +40,34 @@ nav .nav__list a:visited {
     background: #191d26 !important;
 }
 
+#main { 
+    padding-bottom: 40px !important;
+}
+
 .initial-content {
     background: #0d1117 !important;
+    padding-bottom: 20px !important;
 }
+
+.sidebar p, .sidebar li {
+    line-height: 1.8;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.sidebar p, .sidebar li a, 
+.sidebar p, .sidebar li a:link,
+.sidebar p, .sidebar li a:visited 
+{
+    color: #2097ff;
+}
+
+.nav__list .nav__items .active {
+    color: #e3ebf3;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+
 
 .content-spacer {
     height:60px; 
@@ -110,6 +135,10 @@ nav .nav__list a:visited {
 
 nav#site-nav.greedy-nav {
     background: transparent !important;
+}
+
+.page__footer {
+    margin-top: 0px;
 }
 
 .page__content h2 {
