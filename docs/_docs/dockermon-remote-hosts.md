@@ -88,5 +88,5 @@ You should now be able to connect to Docker Engine API on remote Windows / Mac O
 - [Dockermon Container Image Build](/dockermon/dockermon-container-build)
 - [Dockermon Container Init Process](/dockermon/dockermon-init)
 - [Dockermon Container Github Updates](/dockermon/dockermon-remote-updates)
-- [Dockermon Remote Host Management](/dockermon/dockermon-container-remote-hosts)
+- [Dockermon Remote Host Management](/dockermon/dockermon-remote-hosts)
 - [Dockermon Host Launcher - Mac OS](/dockermon/dockermon-host-launcher)

@@ -36,5 +36,5 @@ You should now see docker host launcher running on port 3801. You can change thi
 - [Dockermon Container Image Build](/dockermon/dockermon-container-build)
 - [Dockermon Container Init Process](/dockermon/dockermon-init)
 - [Dockermon Container Github Updates](/dockermon/dockermon-remote-updates)
-- [Dockermon Remote Host Management](/dockermon/dockermon-container-remote-hosts)
+- [Dockermon Remote Host Management](/dockermon/dockermon-remote-hosts)
 - [Dockermon Host Launcher - Mac OS](/dockermon/dockermon-host-launcher)
