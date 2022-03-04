@@ -14,12 +14,15 @@ Utilizing the Bull Scheduling and Redis to keep track of job scheduling, separat
 ### Charts and Graphs
 Using ChartJS and MySQL storage, we are able to chart out the vitals of the container. 
 
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-charts.png?raw=true)
+
 ### 1 Second Profiler
 The 1 Second Profiler connects to the Docker Engine API and reads live stats from the containers and then logs them into the database as a profile. This is useful for benchmarking your builds, tracking and monitoring them.  Profilings can be reviewed, replayed and exported.
 
 ### Activity Logs
 Dockermon logs when events are received from the Docker Engine. Such as container start, stop, pause, create, kill, remove.  Any events are logged to their related Containers, Images, Volumes, Networks, Hosts, etc. 
 
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-activity-logs.png?raw=true)
 ## Docker Management
 Dockermon has a full blown React / Next JS with PrimeReact loaded full of smooth components for you to manage Docker with.
 
@@ -33,12 +36,16 @@ Dockermon has a full blown React / Next JS with PrimeReact loaded full of smooth
 - Launch Finder and VS Code to Mounted directories
 - So much more!
 
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-control-menu.png?raw=true)
+
 ### Image Management
 - Create images from containers
 - Search Docker Hub
 - Pull images from Docker Hub
 - Remove Images
 - More image management coming soon.
+
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-create-image.png?raw=true)
 
 ### Volume Management
 - View volume details
@@ -50,6 +57,8 @@ Dockermon has a full blown React / Next JS with PrimeReact loaded full of smooth
 - Add / Remove containers from networks
 - Configure network IPv4 and IPv6 Settings / Gateways, etc.
 - Configure DNS
+
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-network-diagram.png?raw=true)
 
 ## Multi-Host Support
 Want to add more docker hosts? Check out the [socat](/dockermon-socat) section and learn more about exposing Docker Engine API and then connect to other hosts on your network or even on the internet (not recommended for production use at this stage).
