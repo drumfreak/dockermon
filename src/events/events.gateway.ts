@@ -46,7 +46,7 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayConnection, 
 
   @UseGuards(EventsGuard)
   @SubscribeMessage('openTerminal')
-  async openTerminal(@MessageBody() data: any, @ConnectedSocket() client: Socket): Promise<number> {
+  async openTerminal(@MessageBody() data: any): Promise<number> {
     if (!data.containerId) return;
     this.logger.log('------> Launching Terminal <------ ', ' Container: ', data.containerId);
     const cmd = `osascript -e 'tell app "Terminal" to do script "docker exec -it ${data.containerId} /bin/sh"' && osascript -e 'tell application "Terminal" to activate'`;

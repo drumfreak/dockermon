@@ -137,7 +137,7 @@ The initial login details are as follows:
 <div class="content-spacer-sm"></div>
 ### 5. Optional Host Launcher
 
-What is this? - [Dockermon Host Launcher - Mac OS](https://drumfreak.github.io/dockermon/dockermon-host-launcher) is a utility Nest JS web socket server app that runs on your host machine for the web interface to mimic Docker Desktop launch Terminal, Finder and docker commands and etc. This only works on the local machine and expoes port `3801` by default. If you are remote monitoring a Docker instance you will not be able to launch terminals, open folders, etc. 
+What is this? - [Dockermon Host Launcher - Mac OS](https://drumfreak.github.io/dockermon/dockermon-host-launcher) is a utility Nest JS web socket server app that runs on your host machine for the web interface to mimic Docker Desktop launch Terminal, Finder and docker commands and etc. This only works on the local machine and exposes port `3801` by default. If you are remote monitoring a Docker instance you will not be able to launch terminals, open folders, etc. 
 
 > Windows implementation of this host launcher will be available in future releases.
 
