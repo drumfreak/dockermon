@@ -9,11 +9,11 @@ toc: false
 </h2>
 
 ## Backend built with:
-- [Nest](https://github.com/nestjs/nest)
-- [Node.js](https://nodejs.org)
-- [TypOrm](https://typorm.io)
-- [Nest Bull](https://github.com/nestjs/bull)
-- [SocketIO](https://socket.io)
+- [Nest](https://github.com/nestjs/nest){:target="_blank"}
+- [Node.js](https://nodejs.org){:target="_blank"}
+- [TypOrm](https://typorm.io){:target="_blank"}
+- [Nest Bull](https://github.com/nestjs/bull){:target="_blank"}
+- [SocketIO](https://socket.io){:target="_blank"}
 
 <hr />
 
@@ -25,7 +25,7 @@ More details on that later.
 <hr />
 
 ## Dev Notes:
-- [Docker Alpine Socat](https://github.com/alpine-docker/socat) is a good idea.
+- [Docker Alpine Socat](https://github.com/alpine-docker/socat){:target="_blank"} is a good idea.
 
 ``` bash
 docker run -d --restart=always \
@@ -46,7 +46,7 @@ docker run -d --restart=always \
 - [Dockermon Frontend Details](/dockermon/dockermon-frontend)
 - [Dockermon socat Socket Pipe](/dockermon/dockermon-socat)
 - [Dockermon Container Image Build](/dockermon/dockermon-container-build)
-- [Dockermon Container Init Process](/dockermon/dockermon-container-init)
+- [Dockermon Container Init Process](/dockermon/dockermon-init)
 - [Dockermon Container Github Updates](/dockermon/dockermon-remote-updates)
 - [Dockermon Remote Host Management](/dockermon/dockermon-container-remote-hosts)
 - [Dockermon Host Launcher - Mac OS](/dockermon/dockermon-host-launcher)

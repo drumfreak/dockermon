@@ -26,6 +26,15 @@ nav .nav__list a:visited {
     color: #2097ff;
 }
 
+
+@media only screen and (max-width: 992px) { 
+    .toc {
+        margin-top:120px !important;
+        background: #191d26 !important;
+        display: none !important
+    }
+}
+
 .toc {
     margin-top:120px !important;
     background: #191d26 !important;
@@ -35,8 +44,25 @@ nav .nav__list a:visited {
     background: #0d1117 !important;
 }
 
+.content-spacer {
+    height:60px; 
+    width:100%;
+    clear: both;
+}
+
+.content-spacer-sm {
+    height:20px; 
+    width:100%;
+    clear: both;
+}
+
+
 .search__toggle  {
   color: #3392ff !important;
+}
+
+.navicon {
+    color: #3392ff !important;
 }
 
 .toc header .nav__title {

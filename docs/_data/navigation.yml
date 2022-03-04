@@ -31,7 +31,7 @@ docs:
     - title: "Docker Image"
       url: /dockermon-container-build/
     - title: "Dockermon Github Updates"
-      url: /dockermon-container-build/
+      url: /dockermon-remote-updates/
     - title: "Remote Host Management"
       url: /dockermon-remote-hosts/
     - title: "Container Init Process"

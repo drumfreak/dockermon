@@ -51,7 +51,7 @@ Now you've got the code. Let's do something with it.
 
 ### 3. Get socat Running
 
-[Docker Engine API](https://docs.docker.com/engine/api/v1.41) on Mac OS is not exposed by default and cannot be exposed via the Docker Desktop App. However, through severals searches on the net and Stack Overflow, the software Gods have spoken and you can use [socat](https://www.npmjs.com/package/socat) for that.
+[Docker Engine API](https://docs.docker.com/engine/api/v1.41) on Mac OS is not exposed by default and cannot be exposed via the Docker Desktop App. However, through several searches on the net and Stack Overflow, the Software Gods have spoken and you can use [socat](https://www.npmjs.com/package/socat){:target="_blank"} for that.
 
 
 > Warning and ultra important. Be sure that you are running a firewall on your system. Exposing port 2375 is a known docker port and you should ensure that no external access to this port is available.  We'll talk more about [Remote Host Support](https://drumfreak.github.io/dockermon/dockermon-remote-hosts) later.
@@ -108,7 +108,7 @@ Be patient. Give Dockermon a good 5 minutes to build, start up and start collect
 
 - [Learn more about the Dockermon Container Image](https://drumfreak.github.io/dockermon/dockermon-container-build)
 
-- [Learn more about the Dockermon Container Init Process](https://drumfreak.github.io/dockermon/dockermon-container-init)
+- [Learn more about the Dockermon Container Init Process](https://drumfreak.github.io/dockermon/dockermon-init)
 
 Once you see the backend colorfully logging, you can access the web interface at [http://localhost:3800](http://localohst:3800)
 
@@ -162,7 +162,7 @@ Enjoy!
 - [Dockermon Frontend Details](https://drumfreak.github.io/dockermon/dockermon-frontend)
 - [Dockermon socat Socket Pipe](https://drumfreak.github.io/dockermon/dockermon-socat)
 - [Dockermon Container Image Build](https://drumfreak.github.io/dockermon/dockermon-container-build)
-- [Dockermon Container Init Process](https://drumfreak.github.io/dockermon/dockermon-container-init)
+- [Dockermon Container Init Process](https://drumfreak.github.io/dockermon/dockermon-init)
 - [Dockermon Container Github Updates](https://drumfreak.github.io/dockermon/dockermon-remote-updates)
 - [Dockermon Remote Host Management](https://drumfreak.github.io/dockermon/dockermon-remote-hosts)
 - [Dockermon Host Launcher - Mac OS](https://drumfreak.github.io/dockermon/dockermon-host-launcher)
