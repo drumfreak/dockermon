@@ -3,6 +3,7 @@ permalink: /dockermon-features/
 title: "Dockermon Features"
 toc: false
 ---
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-profiler.png?raw=true)
 
 ## Dockermon Features
 

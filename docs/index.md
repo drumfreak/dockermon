@@ -92,7 +92,7 @@ The easiest way setup your dockermon container is to git clone the repo as menti
 
 > Dockermon will expose the following ports. However, MySQL, Redis, and other service ports will be closed and only used internally.
 
-| Service      |  Port |
+| Port      |  Service |
 | ----------- | ----------- |
 | 3800      | Dockermon Frontend Web Port http://localhost:3800 |
 | 3810      | Dockermon Nest HTTP Api http://localhost:3810 |

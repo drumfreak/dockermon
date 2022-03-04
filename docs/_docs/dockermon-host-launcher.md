@@ -4,6 +4,8 @@ title: "Dockermon Host Launcher"
 toc: false
 ---
 
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-host-launcher.png?raw=true)
+
 ## Optional Host Launcher - To Launch Terminal, Finder, VS Code, etc
 
 What is this? The Dockermon Host Launcher (Mac OS) is a utility Nest / Node JS web socket server app that runs on your host machine for the web interface to mimic Docker Desktop launch Terminal, Finder and docker commands and etc. This only works on the local machine and exposes port `3801` by default. If you are remote monitoring a Docker instance you will not be able to launch terminals, open folders, etc. 
