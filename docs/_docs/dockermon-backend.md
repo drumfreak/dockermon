@@ -4,7 +4,7 @@ title: "Dockermon Backend Architecture"
 toc: false
 ---
 
-## Dockermon Server / Container built with:
+## Dockermon Backend
 
 The backend / server was built using Node 14, Docker, MySQL 8, Debian Linux and various other packages. Read more: [Dockermon Container Image Build](/dockermon/dockermon-container-build)
 
@@ -31,7 +31,7 @@ This API also subscribes to Docker Engine's Events for updates when anything cha
 
 This backend uses JWT Authentication tokens to secure the backend routes. The only routes not authenticated are the login routes for HTTP, and IDENTIFY or PING on WebSockets. This is why you must login to use Dockermon, and you are assigned an Auth Token which is used to access the backend.
 
-### Dockermon Woker 1 - Cronjob
+### Dockermon Worker 1 - Cronjob
 
 Running in a separate Node process is Worker 1, aka "The Cronjob".  This worker keeps the site stats up to date as well as monitors the status of objects changing within Docker. It runs a couple of jobs:
 
