@@ -17,7 +17,7 @@ then
     ln -s /dev/stdin /var/log/dockermon.log
 fi
 
-if [ ! -d "/root/.npm" ] 
+if [ -d "/root/.npm" ] 
 then
     rm -rf /root/.npm
 fi
