@@ -50,7 +50,26 @@ Dockermon has a full blown React / Next JS with PrimeReact loaded full of smooth
 - View Container Changed Files
 - So much more!
 
-![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-control-menu.png?raw=true)
+![Dockermon Control Menu](https://drumfreak.github.io/dockermon/images/dockermon-control-menu.png?raw=true)
+
+### Container Resource Management
+
+Tune your containers live without restarting.
+- Memory Limits
+- Memory Reservation
+- Memory Swap
+- Memory Swappiness
+- CPU Count
+- CPU Quota
+- CPU Realtime Period
+- CPU Runtime
+- Block I/O Weight
+- Process (PID) Limits
+  
+* Some settings are for Windows Hosts only.
+
+![Dockermon Container Resources](https://drumfreak.github.io/dockermon/images/dockermon-container-resources.png?raw=true)
+
 
 ### Image Management
 - Create images from containers
@@ -72,7 +91,7 @@ Dockermon has a full blown React / Next JS with PrimeReact loaded full of smooth
 - Configure network IPv4 and IPv6 Settings / Gateways, etc.
 - Configure DNS
 
-![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-network-diagram.png?raw=true)
+![Dockermon Network Management](https://drumfreak.github.io/dockermon/images/dockermon-network-diagram.png?raw=true)
 
 <div class="content-spacer-sm"></div>
 
@@ -85,8 +104,12 @@ Want to add more docker hosts? Check out the [socat](/dockermon-socat) section a
 
 <div class="content-spacer-sm"></div>
 
+
 ## Control Center Dashboards
 Dockermon is being designed with interactive dashboards so you can quickly control and get a birds eye view of your docker system. 
+
+![Dockermon Dashboards](https://drumfreak.github.io/dockermon/images/dockermon-dashboards.png?raw=true)
+
 
 <div class="content-spacer-sm"></div>
 
