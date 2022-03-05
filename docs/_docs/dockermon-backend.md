@@ -40,7 +40,7 @@ Running in a separate Node process is Worker 1, aka "The Cronjob".  This worker 
 
 ### Dockermon Worker 2 - Profiler
 
-Running in a separate Node process is Worker 2 aka "The Profiler".  This worker runs the job of profiling your docker containers. It's a heavy task, so this has been pushed off into it's own separate node process.  Profiler uses the Docker Stats API which creates a live stream and receives updates from Docker about the container CPU, Memory, Network, Disk Read / Write, etc.  This is the data sampled for the profiler which is based on interval readings (ie: 1 second comparisons). 
+Running in a separate Node process is Worker 2 aka "The Profiler".  This worker runs the job of profiling your docker containers when you have the profiler active and monitoring a container. It's a heavy task, so this has been pushed off into it's own separate node process.  Profiler uses the Docker Stats API which creates a live stream and receives updates from Docker about the container CPU, Memory, Network, Disk Read / Write, etc.  This is the data sampled for the profiler which is based on interval readings (ie: 1 second comparisons). 
 
 The data collected by this is transmitted to the frontend and that's what you see in your charts when running profilers.   Every 10 seconds the data is saved to the database as data set.  Once the client disconnects from the profiler, or stops the profiler job, the data is saved and the job is terminated.
 

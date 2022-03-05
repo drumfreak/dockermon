@@ -19,20 +19,22 @@ sidebar:
 
 ![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-preview.png?raw=true)
 
-Dockermon is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. This project also has a Companion Node/Nest "Host Launcher" App that runs to assist in managing docker. 
+Dockermon is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. Providing an intuitive and informative utility packed web interface, it was written for DevOps, Software Developers, Docker Fans, Software Engineers or just about anyone who wants to explore Docker from a different perspective than the command line and Docker Desktop. 
 
 The Docker Hub Image [webfreakeric/dockermon-monitor:latest](https://hub.docker.com/r/webfreakeric/dockermon-monitor){:target="_blank"} runs self contained (mostly, socat needed) and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41){:target="_blank"} through Sockets and HTTP requests.
 
-Dockermon has worker jobs that collect stats for analyzing your containers. There's an intuitive interface and backend API that allows you to create, maintain, monitor, manage and do just about anything you need with Docker containers, images, volumes, networks, and various aspects of your Docker setup. Multi and Remote host control and monitoring is also possible!
+Dockermon has [worker jobs](https://drumfreak.github.io/dockermon/dockermon-backend) that collect stats for analyzing your containers. There's a backend API that allows you to create, maintain, monitor, manage and do just about anything you need with Docker containers, images, volumes, networks, and various aspects of your Docker setup. 
 
-[Dockermon](https://github.com/drumfreak/dockermon){:target="_blank"} provides you with a blazing fast React/NextJS web interface to launch manage and view your docker system. Through the NestJS Host Companion included here, the web interface creates a socket connection and launches commands on your local machine. See Host Launcher section later.
+[Multi and Remote host control and monitoring is also possible!](https://drumfreak.github.io/dockermon/dockermon-remote-hosts) 
+
+[Dockermon](https://github.com/drumfreak/dockermon){:target="_blank"} provides you with a blazing fast [React/Next web interface](https://drumfreak.github.io/dockermon/dockermon-frontend) to manage and view your docker system. See [Dockermon Features](https://drumfreak.github.io/dockermon/dockermon-features) for more info. 
+
+[Host Launcher](https://drumfreak.github.io/dockermon/dockermon-host-launcher) (optional) is a companion app to mimic the Launch Terminal, Finder, VS Code functionality of the official Docker Desktop app, Dockermon has a NestJS Host Launcher Companion in the source code you'll download. It creates a secure socket connection and launches commands on your local machine such as Launch Terminal to attach to containers, watch logs via terminal and more. 
+
 
 Read more:
-
 - [Dockermon Features](https://drumfreak.github.io/dockermon/dockermon-features)
 - [Dockermon Inspiration](https://drumfreak.github.io/dockermon/dockermon-inspiration)
-- [Dockermon Backend Details](https://drumfreak.github.io/dockermon/dockermon-backend)
-- [Dockermon Frontend Details](https://drumfreak.github.io/dockermon/dockermon-frontend)
 
 
 <div class="content-spacer-sm"></div>
@@ -45,6 +47,9 @@ Read more:
 - [NodeJs](https://nodejs.org){:target="_blank"} -- [NVM Recommended](https://github.com/nvm-sh/nvm){:target="_blank"}
 
 Start the Docker Engine. Tune your settings. You do not need to do anything with Node at this point.
+
+[Feeling Lucky? Jump Quick Install](#quick-install)
+(It's a really good idea to read below first!)
 
 <div class="content-spacer-sm"></div>
 
@@ -156,12 +161,32 @@ npm start
 You should now see docker host launcher running on port 3801. You can change this port but it is not recommended.
 
 <div class="content-spacer-sm"></div>
+
+## Quick Install
+This section was purposely placed at the bottom in hopes you have read everything above. 
+
+You have Docker running. Node installed. Open Terminal. cd to your favorite directory.
+
+> Quick install only works for Mac OS. You will need to modifiy your socat run commands as mentioned above if you're using Linux or Windows.
+
+``` bash
+git clone https://github.com/drumfreak/dockermon.git
+cd dockermon
+npm install -g socat && npm run socat
+cp .env.sample .env
+docker-compose -d -p "dockermon" -f docker-compose.yml up
+npm install && npm run build && npm start
+```
+
+You should now have Dockermon running in Docker, connected to the socket through socat, and the interface will be ready in about 3 - 5 minutes after node_modules installs and the workers have had a chance to assess your system.
+
+<div class="content-spacer-sm"></div>
+
 ## Parting Notes
 
 This is not meant for production environments although you can connect to any Docker host that has the Engine API ports exposed. This is in the early development stages. In other words, use at your own risk, <b>do not use it in production</b>!!
 
 Enjoy!
-
 [Eric Rosebrock](https://github.com/drumfreak)
 
 <div class="content-spacer"></div>
