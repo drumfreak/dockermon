@@ -3,14 +3,31 @@ permalink: /dockermon-container-build/
 title: "Docker Image Build Process"
 toc: false
 ---
-<h2 align="center">
- Dockermon Container / Image Build Details
-</h2>
+## Dockermon Container / Image Build Details
 
-The Dockermon Image was created from the mysql/debian-8 image. It was modified to add packages such as git, node, redis, vim, etc. 
+The Dockermon container was tagged off of mysql/debian-8 container. From there it was tagged as webfreakeric/debian:0.1. After that, it was built with the following Dockerfile:
 
-The image was built, flattened, and placed on Docker Hub as the engine for this project.
+```bash
+FROM webfreakeric/debian:0.2
+WORKDIR /
+RUN rm -rf /var/lib/apt/lists/* && \
+rm -rf /etc/apt/sources.list.d/* && \
+apt-get update && \
+apt-get clean  && \
+apt-get install -yq git curl gnupg iputils-ping vim procps redis tzdata && \
+curl -sL https://deb.nodesource.com/setup_14.x | bash
+RUN apt-get install -y nodejs && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN rm -rf /etc/apt/sources.list.d/* 
+```
 
+This installs Redis, Node 14, Git, and a few other basic utils to the system and then cleans the image of any temporary files.
+
+From there, the image was exported and flattened into a new image to remove history / contexts (a problem with Docker is you can overload an image and it becomes massive).  After that flattening, it's built with the docker-compose.yml file and another build process which copies the [dockermon-app](https://github.com/drumfreak/dockermon-app){:target="_blank} code to the image and prepares it for distribution.
+
+After that the image is packaged and pushed as [webfreakeric/dockermon-monitor:latest](https://hub.docker.com/r/webfreakeric/dockermon-monitor){:target="_blank"}  and you can access it on Docker Hub.
+
+
+<div class="content-spacer-sm"></div>
 <hr />
 
 ### Container Environment Vars
@@ -30,8 +47,7 @@ The folling Environment Vars may be set, but not recommended you change them at 
 | DOCKERMON_ENABLE_GIT_UPDATE | for updaes | 1 | 
 | DOCKERMON_ENABLE_GIT_BRANCH | for updaes | main | 
 
-
-<hr />
+<div class="content-spacer-sm"></div>
 
 ### Container Image and Volume Sizes
 
@@ -39,14 +55,14 @@ The following are estimated file sizes without data in the database as of versio
 
 | Disk      | Size  |
 | ----------- | ----------- |
-| Base Image `webfreakeric/dockermon` | 701.77 MB |
-| Backend `node_modules` Volume | 94.69 MB |
-| Frontend `node_modules` Volume | 376.4 MB |
+| Base Image `webfreakeric/dockermon-monitor` | 701.77 MB |
+| Backend `dockermon_node_modules-be` Volume | 94.69 MB |
+| Frontend `dockermon_node_modules-fe` Volume | 376.4 MB |
 | MySQL Data `dockermon_db-data` | Volume | 0 MB |
 
 <b>Total Estimated New Install: 1.1Gb Disk space</b>
 
-<hr />
+<div class="content-spacer-sm"></div>
 
 ## docker-compose:
 

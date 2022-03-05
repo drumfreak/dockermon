@@ -40,13 +40,14 @@ Dockermon has a full blown React / Next JS with PrimeReact loaded full of smooth
 
 
 ### Container Management
-- Start, Stop, Pause, Resume, Kill, Remove, Create, Rename containers.
+- Start, Stop, Pause, Restart, Resume, Kill, Remove, Create, Rename containers.
 - View disk usage by volumes.
 - View / Join / Disconnect from networks
 - View and Monitor Container Processes
 - View and Monitor Container Logs
 - Attach to local Docker Containers via Terminal
 - Launch Finder and VS Code to Mounted directories
+- View Container Changed Files
 - So much more!
 
 ![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-control-menu.png?raw=true)
@@ -91,6 +92,8 @@ Dockermon is being designed with interactive dashboards so you can quickly contr
 
 ## Customizable Chart Colors / Site Settings
 Dockermon has a built in Options Panel for you to customize how CPU, Memory, Disk, Network charts and graphs look. As well, you can control several aspects of your menus and site interactions.  Find the cogg and click it!
+
+![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-chart-colors.png?raw=true)
 
 
 More coming.
