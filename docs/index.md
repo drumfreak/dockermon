@@ -8,7 +8,7 @@ excerpt: "Dockermon - Manage and Monitor Docker"
 layouts_gallery:
   - url: /images/dockermon-preview.png
     image_path: /images/dockermon-preview.png
-    alt: "splash layout example"
+    alt: "Dockermon - Manage and Monitor Docker"
 last_modified_at: 2022-03-03T10:23:16-04:00
 toc: true
 sidebar:
