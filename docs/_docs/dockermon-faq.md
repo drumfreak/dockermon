@@ -2,7 +2,7 @@
 ---
 layout: single
 title: "Dockermon FAQ"
-permalink: /dockermon-faq
+permalink: /dockermon-faq/
 breadcrumbs: false
 author_profile: true
 excerpt: "Dockermon - Manage and Monitor Docker - FAQ"
