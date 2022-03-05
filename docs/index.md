@@ -27,9 +27,9 @@ Dockermon has [worker jobs](https://drumfreak.github.io/dockermon/dockermon-back
 
 [Multi and Remote host control and monitoring is also possible!](https://drumfreak.github.io/dockermon/dockermon-remote-hosts) 
 
-[Dockermon](https://github.com/drumfreak/dockermon){:target="_blank"} provides you with a blazing fast [React/Next web interface](https://drumfreak.github.io/dockermon/dockermon-frontend) to manage and view your docker system. See [Dockermon Features](https://drumfreak.github.io/dockermon/dockermon-features) for more info. 
+Dockermon provides you with a blazing fast [React/Next web interface](https://drumfreak.github.io/dockermon/dockermon-frontend) to manage and view your docker system. The web interface is secure and meant to be accessed locally. 
 
-[Host Launcher](https://drumfreak.github.io/dockermon/dockermon-host-launcher) (optional) is a companion app to mimic the Launch Terminal, Finder, VS Code functionality of the official Docker Desktop app, Dockermon has a NestJS Host Launcher Companion in the source code you'll download. It creates a secure socket connection and launches commands on your local machine such as Launch Terminal to attach to containers, watch logs via terminal and more. 
+[Dockermon Host Launcher](https://drumfreak.github.io/dockermon/dockermon-host-launcher) (optional) is a companion app to mimic the launch Terminal, Finder, VS Code functionality of the official Docker Desktop app. The Host Launcher is in the source code you'll download here. The web interface creates a secure socket connection to the  and launches commands on your local machine such as Launch Terminal to attach to containers, watch logs via terminal and more. 
 
 
 Read more:
@@ -110,7 +110,7 @@ Let's get the Dockermon container running. Assuming Docker and socat are running
  From Terminal, run:
 
 ```bash
-docker-compose -p "dockermon" -f docker-compose.yml up
+docker-compose --detach -p "dockermon" -f docker-compose.yml up
 ```
 
 > That didn't work? Docker must be running to create the dockermon container.
