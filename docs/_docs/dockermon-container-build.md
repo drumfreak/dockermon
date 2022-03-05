@@ -58,7 +58,7 @@ The following are estimated file sizes without data in the database as of versio
 | Base Image `webfreakeric/dockermon-monitor` | 701.77 MB |
 | Backend `dockermon_node_modules-be` Volume | 94.69 MB |
 | Frontend `dockermon_node_modules-fe` Volume | 376.4 MB |
-| MySQL Data `dockermon_db-data` | Volume | 0 MB |
+| MySQL Data `dockermon_db-data` Volume | 0 MB |
 
 <b>Total Estimated New Install: 1.1Gb Disk space</b>
 
