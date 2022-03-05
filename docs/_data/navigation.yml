@@ -17,7 +17,7 @@ main:
 docs:
   - title: Getting Started
     children:
-      - title: "Readme"
+      - title: "Readme / Home"
         url: /
       - title: "Features"
         url: /dockermon-features/
@@ -25,6 +25,8 @@ docs:
         url: /dockermon-host-launcher/
       - title: "socat Dependency"
         url: /dockermon-socat/
+      - title: "FAQ & Troubleshooting"
+        url: /dockermon-faq/
 
   - title: More
     children:
