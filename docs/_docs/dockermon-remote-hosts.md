@@ -16,63 +16,20 @@ Dockermon can monitor remote Docker Hosts on your network. It requires access to
 
 ### Get socat Running (MacOS)
 
-[Docker Engine API](https://docs.docker.com/engine/api/v1.41) on Mac OS is not exposed by default and cannot be exposed via the Docker Desktop App. However, through several searches on the net and Stack Overflow, the Software Gods have spoken and you can use [socat](https://www.npmjs.com/package/socat){:target="_blank"}  for that.
+[Docker Engine API](https://docs.docker.com/engine/api/v1.41) on Mac OS is not exposed by default and cannot be exposed via the Docker Desktop App. However, through several searches on the net and Stack Overflow, the Software Gods have spoken and you can use [socat](/dockermon/dockermon-socat)  for that.
 
-
-> Warning and ultra important. Be sure that you are running a firewall on your system. Exposing port 2375 is a known docker port and you should ensure that no external access to this port is available.  We'll talk more about remote hosts later.
-
-
-``` bash
-npm install -g socat
-npm run socat
-```
-
-> Note: the npm run socat command above is in the package.json. It runs the socat command for you in the background and you must remember to run this anytime you reobot. The command is as follows. Do not run this command below. This is what is being run by `npm run socat` for your reference:
-
-``` bash
-socat TCP-LISTEN:2375,reuseaddr,fork UNIX-CLIENT:$HOME/Library/Containers/com.docker.docker/Data/docker.raw.sock
-```
-
-You may need to modify this for your system. This is the standard Mac OS setup.
 
 [Learn more about Dockermon and socat Here.](/dockermon/dockermon-socat)
 
-Once socat is running, dockermon can now connect to your Docker HTTP Engine.
+Once socat is running on your remote host and the port is exposed, dockermon can now connect to your Remote Docker HTTP Engine.
 
 <hr />
 <div class="content-spacer-sm"></div>
 
-### Socat Not Needed on Windows without Linux
+### Joining Remote Hosts Is Easy
 
-[Docker Engine API](https://docs.docker.com/engine/api/v1.41){:target="_blank"}  may be exposable through the Docker Desktop App on Windows systems.
+Login to Dockermon, go to System > Hosts > Join.  Enter the details about your remote host and Dockermon will attempt a connection and start propogating it's database with that host's information.
 
-You may need to expose the port on your firewall. In Power Shell, you can run (AFTER REPLACING LAN_IP) with your Windows LAN IP address:
-
-```
-netsh interface portproxy add v4tov4 listenport=2375 listenaddress=LAN_IP connectaddress=127.0.0.1 connectport=2375
-
-```
-
-<div class="content-spacer-sm"></div>
-
-### Socat on Windows With Docker Linux
-
-> Since Docker for Windows can expose the Docker Engine API for Windows Containers on port 2375, this example will expose the Linux Docker on your Windows machine to port 2377.
-
-If you chose the Linux subsystem then you will need to login to the Linux shell (I use Ubuntu) and install socat there. On my Windwos 10 with Ubuntu I login and run:
-
-``` bash
-socat TCP-LISTEN:2377,reuseaddr,fork UNIX-CLIENT:/var/run/docker.sock
-```
-
-On the Windows Power Shell, Run as Administator, (AFTER REPLACING LAN_IP) with your Windows LAN IP address run:
-
-```
-netsh interface portproxy add v4tov4 listenport=2377 listenaddress=LAN_IP connectaddress=127.0.0.1 connectport=2377
-```
-
-
-You should now be able to connect to Docker Engine API on remote Windows / Mac OS / Linux machines.
 
 
 <hr />

@@ -1,0 +1,8 @@
+build
+coverage
+node_modules
+.next
+*.css
+*.scss
+styles/*
+dist
