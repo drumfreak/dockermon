@@ -8,33 +8,9 @@ toc: false
  Dockermon socat - Socket Pipe
 </h2>
 
-<h3>Get socat Running (MacOS)</h3>
 
-[Docker Engine API](https://docs.docker.com/engine/api/v1.41){:target="_blank"} on Mac OS or Linux is not exposed by default and cannot be exposed via the Docker Desktop App. However, through several searches on the net and Stack Overflow, the Software Gods have spoken and you can use [socat](https://www.npmjs.com/package/socat){:target="_blank"} for that.
-
-
-> Warning and ultra important. Be sure that you are running a firewall on your system. Exposing port 2375 is a known docker port and you should ensure that no external access to this port is available.  We'll talk more about remote hosts later.
-
-
-``` bash
-npm install -g socat
-npm run socat
-```
-
-> Note: the npm run socat command above is in the package.json. It runs the socat command for you in the background and you must remember to run this anytime you reobot. The command is as follows. Do not run this command below. This is what is being run by `npm run socat` for your reference:
-
-``` bash
-socat TCP-LISTEN:2375,reuseaddr,fork UNIX-CLIENT:$HOME/Library/Containers/com.docker.docker/Data/docker.raw.sock
-```
-
-You may need to modify this for your system. This is the standard Mac OS setup.
-
-[Learn more about Dockermon and socat Here.](/dockermon/dockermon-socat)
-
-Once socat is running, dockermon can now connect to your Docker HTTP Engine.
-
-<hr />
-
+> As of 03/06/2022 socat dependency is not needed. It is now bundled into Dockermon's container and handles everything internally. You will need to ensure Docker can map /var/run/docker.sock on your local system as a bind mount. Typically on MacOS / Linux you don't need to do anything, but if you get permission errors, add the /var/run/docker.sock to your Docker Desktop > Settings > Sharing section and try to create the dockermon container again.
+> 
 
 <h3>Socat Not Needed on Windows without Linux</h3>
 
