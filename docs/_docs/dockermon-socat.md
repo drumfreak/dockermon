@@ -6,19 +6,18 @@ toc: false
 
 ## Dockermon socat - Socket Pipe
 
+This section pertains to monitoring remote Linux / MacOS hosts or if you do not wish to run Dockermon's internal socat due to permission errors or issues.
+
 
 > As of 03/06/2022 socat dependency is not needed. It is now bundled into Dockermon's container and handles everything internally. You will need to ensure Docker can map /var/run/docker.sock on your local system as a bind mount. Typically on MacOS / Linux you don't need to do anything, but if you get permission errors, add the /var/run/docker.sock to your Docker Desktop > Settings > Sharing section and try to create the dockermon container again.
 
-
-This section pertains to monitoring remote Linux / MacOS hosts or if you do not wish to run Dockermon's internal socat due to permission errors or issues.
-
 ### Running alpine/socat Docker Container
 
-There is a Docker Hub image that runs socat. This method has been bundled into the Dockermon container and is not needed for you to run Dockermon. Howerver, this is an alertnative if you wish to expose your Docker Engine API on remote hosts to use with Dockermon. This project creates a container, links your /var/run/docker.sock and exposes port 2376 for you to access the Docker Engine API. 
+There is a Docker Hub image that runs socat. This method has been bundled into the Dockermon container and is not needed for you to run Dockermon. However, this is an alertnative if you wish to expose your Docker Engine API on remote hosts to use with Dockermon. This project creates a container, links your /var/run/docker.sock and exposes port 2376 for you to access the Docker Engine API. 
 
 > You do not need this if you are running Dockermon and have socat enabled (default).
 
-- [Docker Alpine Socat](https://github.com/alpine-docker/socat){:target="_blank"} is a good idea to potentially eliminate the need for external socat, however requires potentially setting up Docker Engine. Investigate this.
+- [Docker Alpine Socat](https://github.com/alpine-docker/socat){:target="_blank"} - Exposes Docker Engine API
 
 ``` bash
 docker run -d --restart=always \

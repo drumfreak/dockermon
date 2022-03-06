@@ -10,7 +10,7 @@
 
 Dockermon is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. This project also has a Companion Node/Nest "Host Launcher" App that runs to assist in managing docker. 
 
-The Docker Hub Image [webfreakeric/dockermon-monitor](https://hub.docker.com/r/webfreakeric/dockermon-monitor) runs self contained and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41) through Sockets and HTTP requests.
+The Docker Hub Image [webfreakeric/dockermon](https://hub.docker.com/r/webfreakeric/dockermon) runs self contained and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41) through Sockets and HTTP requests.
 
 Dockermon has worker jobs that collect stats for analyzing your containers. There's an intuitive interface and backend API that allows you to create, maintain, monitor, manage and do just about anything you need with Docker containers, images, volumes, networks, and various aspects of your Docker setup. Multi and Remote host control and monitoring is also possible!
 
@@ -56,7 +56,7 @@ The easiest way setup your dockermon container is to git clone the repo as menti
 
 > Dockermon will expose the following ports. However, MySQL, Redis, and other service ports will be closed and only used internally.
 
-| Service      |  Port |
+| Port      |  Service |
 | ----------- | ----------- |
 | 3800      | Dockermon Frontend Web Port http://localhost:3800 |
 | 3810      | Dockermon Nest HTTP Api http://localhost:3810 |
