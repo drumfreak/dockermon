@@ -23,7 +23,7 @@ docs:
         url: /dockermon-features/
       - title: "Host Launcher"
         url: /dockermon-host-launcher/
-      - title: "socat Dependency"
+      - title: "socat"
         url: /dockermon-socat/
       - title: "FAQ & Troubleshooting"
         url: /dockermon-faq/
