@@ -2,7 +2,7 @@ version: '3.8'
 services:
   dockermon:
     container_name: dockermon
-    image: webfreakeric/dockermon-monitor:latest
+    image: webfreakeric/dockermon:latest
     command: /bin/bash /app/dockermon-app/start.sh
     restart: always
     env_file: ./.env
@@ -30,6 +30,7 @@ services:
       - dockermon_db-data:/var/lib/mysql
       - dockermon_node_modules_fe:/app/dockermon-app/frontend/node_modules
       - dockermon_node_modules_be:/app/dockermon-app/backend/node_modules
+      - $DOCKERMON_DOCKER_LOCAL_SOCKET:/var/run/docker.sock
       # - ./db/backup/files/:/data_backup/data
     logging:
       driver: $DOCKERMON_LOGGING

@@ -14,17 +14,17 @@ RUN rm -rf /var/lib/apt/lists/* && \
 rm -rf /etc/apt/sources.list.d/* && \
 apt-get update && \
 apt-get clean  && \
-apt-get install -yq git curl gnupg iputils-ping vim procps redis tzdata && \
+apt-get install -yq git curl gnupg iputils-ping vim procps redis tzdata socat && \
 curl -sL https://deb.nodesource.com/setup_14.x | bash
 RUN apt-get install -y nodejs && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN rm -rf /etc/apt/sources.list.d/* 
 ```
 
-This installs Redis, Node 14, Git, and a few other basic utils to the system and then cleans the image of any temporary files.
+This installs Redis, Node 14, Git, socat and a few other basic utils to the system and then cleans the image of any temporary files.
 
 From there, the image was exported and flattened into a new image to remove history / contexts (a problem with Docker is you can overload an image and it becomes massive).  After that flattening, it's built with the docker-compose.yml file and another build process which copies the [dockermon-app](https://github.com/drumfreak/dockermon-app){:target="_blank} code to the image and prepares it for distribution.
 
-After that the image is packaged and pushed as [webfreakeric/dockermon-monitor:latest](https://hub.docker.com/r/webfreakeric/dockermon-monitor){:target="_blank"}  and you can access it on Docker Hub.
+After that the image is packaged and pushed as [webfreakeric/dockermon:latest](https://hub.docker.com/r/webfreakeric/dockermon){:target="_blank"}  and you can access it on Docker Hub.
 
 
 <div class="content-spacer-sm"></div>
@@ -78,6 +78,9 @@ DOCKERMON_WORKER_HTTP_PORT=3820
 DOCKERMON_WORKER_HOST_ADDRESS="host.docker.internal"
 DOCKERMON_ENABLE_GIT_UPDATE=1
 DOCKERMON_ENABLE_GIT_BRANCH="main"
+DOCKERMON_ENABLE_SOCAT=1
+DOCKERMON_DOCKER_LOCAL_SOCKET="/var/run/docker.sock"
+DOCKERMON_CURRENT_ENV="prod"
 
 REDIS_PORT=6379
 REDIS_HOST="localhost"
@@ -121,6 +124,7 @@ services:
       - $DOCKERMON_FRONTEND_PORT:3800
       - $DOCKERMON_BACKEND_API_PORT:$DOCKERMON_BACKEND_API_PORT
       - $DOCKERMON_BACKEND_WS_PORT:$DOCKERMON_BACKEND_WS_PORT
+      - $DOCKERMON_DOCKER_LOCAL_SOCKET:/var/run/docker.sock
     volumes:
       # - dockermon_db-config:/etc/mysql
       - dockermon_db-data:/var/lib/mysql

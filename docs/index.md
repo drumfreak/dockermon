@@ -21,7 +21,7 @@ sidebar:
 
 Dockermon is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. Providing an intuitive and informative utility packed web interface, it was written for DevOps, Software Developers, Docker Fans, Software Engineers or just about anyone who wants to explore Docker from a different perspective than the command line and Docker Desktop. 
 
-The Docker Hub Image [webfreakeric/dockermon-monitor:latest](https://hub.docker.com/r/webfreakeric/dockermon-monitor){:target="_blank"} runs self contained (mostly, socat needed) and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41){:target="_blank"} through Sockets and HTTP requests.
+The Docker Hub Image [webfreakeric/dockermon:latest](https://hub.docker.com/r/webfreakeric/dockermon){:target="_blank"} runs self contained and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41){:target="_blank"} through Sockets and HTTP requests.
 
 Dockermon has [worker jobs](https://drumfreak.github.io/dockermon/dockermon-backend) that collect stats for analyzing your containers. There's a backend API that allows you to create, maintain, monitor, manage and do just about anything you need with Docker containers, images, volumes, networks, and various aspects of your Docker setup. 
 
@@ -64,34 +64,7 @@ cp .env.sample .env
 Now you've got the code. Let's do something with it.
 <div class="content-spacer-sm"></div>
 
-### 3. Get socat Running
-
-[Docker Engine API](https://docs.docker.com/engine/api/v1.41){:target="_blank"} on Mac OS is not exposed by default and cannot be exposed via the Docker Desktop App. However, through several searches on the net and Stack Overflow, the Software Gods have spoken and you can use [socat](https://www.npmjs.com/package/socat){:target="_blank"} for that.
-
-
-> Warning and ultra important. Be sure that you are running a firewall on your system. Exposing port 2375 is a known docker port and you should ensure that no external access to this port is available.  We'll talk more about [Remote Host Support](https://drumfreak.github.io/dockermon/dockermon-remote-hosts) later.
-
-
-```bash
-npm install -g socat
-npm run socat
-```
-
-> Note: the npm run socat command above is in the package.json. It runs the socat command for you in the background and you must remember to run this anytime you reboot. The command is as follows. Do not run this command below. This is what is being run by `npm run socat` for your reference:
-
-```bash
-socat TCP-LISTEN:2375,reuseaddr,fork UNIX-CLIENT:$HOME/Library/Containers/com.docker.docker/Data/docker.raw.sock
-```
-
-You may need to modify the socket path for your system. This is the standard Mac OS setup.
-
-[Learn more about Dockermon and socat Here.](https://drumfreak.github.io/dockermon/dockermon-socat)
-
-Once socat is running, dockermon can now connect to your Docker HTTP Engine.
-
-<div class="content-spacer-sm"></div>
-
-### 4. Create Dockermon Docker Container
+### 3. Create Dockermon Docker Container
 
 The easiest way setup your dockermon container is to git clone the repo as mentioned earlier and run docker-compose. If you've followed the steps so far, you have the repo and are ready.
 
@@ -140,7 +113,8 @@ The initial login details are as follows:
 | password   | `dockermon` |
 
 <div class="content-spacer-sm"></div>
-### 5. Optional Host Launcher
+
+### 4. Optional Host Launcher
 
 What is this? - [Dockermon Host Launcher - Mac OS](https://drumfreak.github.io/dockermon/dockermon-host-launcher) is a utility Nest JS web socket server app that runs on your host machine for the web interface to mimic Docker Desktop launch Terminal, Finder and docker commands and etc. This only works on the local machine and exposes port `3801` by default. If you are remote monitoring a Docker instance you will not be able to launch terminals, open folders, etc. 
 
@@ -172,7 +146,6 @@ You have Docker running. Node installed. Open Terminal. cd to your favorite dire
 ``` bash
 git clone https://github.com/drumfreak/dockermon.git
 cd dockermon
-npm install -g socat && npm run socat
 cp .env.sample .env
 docker-compose -d -p "dockermon" -f docker-compose.yml up
 npm install && npm run build && npm start
