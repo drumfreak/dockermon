@@ -10,7 +10,7 @@
 
 Dockermon is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. This project also has a Companion Node/Nest "Host Launcher" App that runs to assist in managing docker. 
 
-The Docker Hub Image [webfreakeric/dockermon-monitor](https://hub.docker.com/r/webfreakeric/dockermon-monitor) runs self contained (mostly, socat needed) and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41) through Sockets and HTTP requests.
+The Docker Hub Image [webfreakeric/dockermon-monitor](https://hub.docker.com/r/webfreakeric/dockermon-monitor) runs self contained and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41) through Sockets and HTTP requests.
 
 Dockermon has worker jobs that collect stats for analyzing your containers. There's an intuitive interface and backend API that allows you to create, maintain, monitor, manage and do just about anything you need with Docker containers, images, volumes, networks, and various aspects of your Docker setup. Multi and Remote host control and monitoring is also possible!
 
@@ -43,7 +43,6 @@ The first step is to start off in terminal in a directory and clone [this repo](
 git clone https://github.com/drumfreak/dockermon.git
 cd dockermon
 cp .env.sample .env
-npm install
 ```
 Now you've got the code. Let's do something with it.
 
@@ -52,6 +51,8 @@ Now you've got the code. Let's do something with it.
 ### 3. Create Dockermon Docker Container
 
 The easiest way setup your dockermon container is to git clone the repo as mentioned earlier and run docker-compose. If you've followed the steps so far, you have the repo and are ready.
+
+> The default settings are for Mac OS and Linux. You will need to modifiy your `DOCKERMON_DOCKER_LOCAL_SOCKET` in the .env if you're using Windows.
 
 > Dockermon will expose the following ports. However, MySQL, Redis, and other service ports will be closed and only used internally.
 
@@ -63,12 +64,12 @@ The easiest way setup your dockermon container is to git clone the repo as menti
 | 3801   | Optional Dockermon Host Launcher Port Run by this source code, not the container ws://localhost:3801  |
 
 
-Let's get the Dockermon container running. Assuming Docker and socat are running, you have the code and are inside the dockermon directory, we are ready to party.
+Let's get the Dockermon container running. Assuming Docker is running, you have the code and are inside the dockermon directory, we are ready to party.
 
  From Terminal, run:
 
 ``` bash
-docker-compose -p "dockermon" -f docker-compose.yml up
+docker-compose -p "dockermon" -f docker-compose.yml up  --detach
 ```
 
 > That didn't work? Docker must be running to create the dockermon container.

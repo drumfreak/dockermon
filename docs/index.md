@@ -78,12 +78,14 @@ The easiest way setup your dockermon container is to git clone the repo as menti
 | 3801   | Optional Dockermon Host Launcher Port Run by this source code, not the container ws://localhost:3801  |
 
 
-Let's get the Dockermon container running. Assuming Docker and socat are running, you have the code and are inside the dockermon directory, we are ready to party.
+> The default settings are for Mac OS and Linux. You will need to modifiy your `DOCKERMON_DOCKER_LOCAL_SOCKET` in the .env if you're using Windows.
+
+Let's get the Dockermon container running. Assuming Docker is running, you have the code and are inside the dockermon directory, we are ready to party.
 
  From Terminal, run:
 
 ```bash
-docker-compose --detach -p "dockermon" -f docker-compose.yml up
+docker-compose -p "dockermon" -f docker-compose.yml up --detach
 ```
 
 > That didn't work? Docker must be running to create the dockermon container.
@@ -141,17 +143,17 @@ This section was purposely placed at the bottom in hopes you have read everythin
 
 You have Docker running. Node installed. Open Terminal. cd to your favorite directory.
 
-> Quick install only works for Mac OS. You will need to modifiy your socat run commands as mentioned above if you're using Linux or Windows.
+> Quick install only works for Mac OS and Linux. You will need to modifiy your `DOCKERMON_LOCAL_SOCKET_PATH` in the .env if you're using Windows.
 
 ``` bash
 git clone https://github.com/drumfreak/dockermon.git
 cd dockermon
 cp .env.sample .env
-docker-compose -d -p "dockermon" -f docker-compose.yml up
+docker-compose -p "dockermon" -f docker-compose.yml up --detach
 npm install && npm run build && npm start
 ```
 
-You should now have Dockermon running in Docker, connected to the socket through socat, and the interface will be ready in about 3 - 5 minutes after node_modules installs and the workers have had a chance to assess your system.
+You should now have Dockermon running in Docker and the interface will be ready in about 3 - 5 minutes after node_modules installs and the workers have had a chance to assess your system.
 
 <div class="content-spacer-sm"></div>
 
