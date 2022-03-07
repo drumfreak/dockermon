@@ -33,6 +33,7 @@ The process allows the automatic updates to the latest code. The code in the rep
 The dockermon container script in [/app/dockermon-app/start.sh](https://github.com/drumfreak/dockermon-app/blob/main/start.sh){:target="_blank"} specifically does this:
 
 ``` bash
+#/bin/sh
 if [ $DOCKERMON_ENABLE_GIT_UPDATE ]
 then
     cd /app
@@ -50,6 +51,8 @@ then
     git pull
 fi
 
+cd /app
+/app/dockermon-app/app-start.sh
 ... resume normal launch
 
 ```

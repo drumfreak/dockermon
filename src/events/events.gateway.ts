@@ -18,8 +18,8 @@ const port: any = process.env.HOST_LAUNCHER_PORT || 3801;
 @WebSocketGateway(Number(port), {
   cors: true,
   namespace: 'events',
-  timeout: 500000000000000,
-  pingTimeout: 999999999,
+  timeout: 30000,
+  pingTimeout: 3000,
 })
 export class EventsGateway implements OnGatewayConnection, OnGatewayConnection, OnGatewayDisconnect {
   containerSockets = {};
