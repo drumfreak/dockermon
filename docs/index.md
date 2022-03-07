@@ -66,7 +66,7 @@ Now you've got the code. Let's do something with it.
 
 ### 3. Create Dockermon Docker Container
 
-The easiest way setup your dockermon container is to git clone the repo as mentioned earlier and run docker-compose. If you've followed the steps so far, you have the repo and are ready.
+The easiest way setup your dockermon container is to git clone the repo as mentioned in Step 2 and run docker-compose. 
 
 > Dockermon will expose the following ports. However, MySQL, Redis, and other service ports will be closed and only used internally.
 
@@ -80,9 +80,7 @@ The easiest way setup your dockermon container is to git clone the repo as menti
 
 > The default settings are for Mac OS and Linux. You will need to modifiy your `DOCKERMON_DOCKER_LOCAL_SOCKET` in the .env if you're using Windows.
 
-Let's get the Dockermon container running. Assuming Docker is running, you have the code and are inside the dockermon directory, we are ready to party.
-
- From Terminal, run:
+Let's get the Dockermon container running. Assuming Docker is running, you have the code and are inside the dockermon directory from Terminal, run:
 
 ```bash
 docker-compose -p "dockermon" -f docker-compose.yml up --detach
@@ -90,9 +88,9 @@ docker-compose -p "dockermon" -f docker-compose.yml up --detach
 
 > That didn't work? Docker must be running to create the dockermon container.
 
-Now Dockermon should be launched and you can see it running in docker. Once the container launches it will install `node_modules` for the frontend and backend separately. This is going to take a few minutes and only runs the first time. The MySQL database will also initialize, create the tables, and the backend and workers will launch. Everything will fire up, but `it will take a few minutes` the first time. After that, bootups will be a matter of a few seconds. 
+Now Dockermon should be launched and you can see it running in docker. Once the container launches it will install `node_modules` for the frontend and backend separately. This is going to take a few minutes and only runs the first time. The MySQL database will also initialize, create the tables, and the backend and workers will launch. Everything will fire up.
 
-Be patient. Give Dockermon a good 5 minutes to build, start up and start collecting stats.  
+> Be patient. Give Dockermon a good 5 minutes to build, start up and start collecting stats.  
 
 > The good news is all of the node_modules and database directories are stored in Docker volumes, so if you reinstall or recreate the container, it can pick up the existing volume and resume where you left off unless you delete the Docker volumes or prune ununsed.
 
