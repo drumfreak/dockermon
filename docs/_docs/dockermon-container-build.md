@@ -46,6 +46,9 @@ The folling Environment Vars may be set, but not recommended you change them at 
 | DOCKERMON_WORKER_HTTP_PORT | for internal | 3820 | 
 | DOCKERMON_ENABLE_GIT_UPDATE | for updaes | 1 | 
 | DOCKERMON_ENABLE_GIT_BRANCH | for updaes | main | 
+| DOCKERMON_ENABLE_SOCAT | for docker api | 1 |
+| DOCKERMON_DOCKER_LOCAL_SOCKET | local socket | /var/run/docker.sock |
+| DOCKERMON_CURRENT_ENV | for internal | prod |
 
 <div class="content-spacer-sm"></div>
 
@@ -55,9 +58,9 @@ The following are estimated file sizes without data in the database as of versio
 
 | Disk      | Size  |
 | ----------- | ----------- |
-| Base Image `webfreakeric/dockermon-monitor` | 701.77 MB |
-| Backend `dockermon_node_modules-be` Volume | 94.69 MB |
-| Frontend `dockermon_node_modules-fe` Volume | 376.4 MB |
+| Base Image `webfreakeric/dockermon-monitor` | 748.77 MB |
+| Backend `dockermon_node_modules-be` Volume | 83.02 MB |
+| Frontend `dockermon_node_modules-fe` Volume | 284.2 MB |
 | MySQL Data `dockermon_db-data` Volume | 0 MB |
 
 <b>Total Estimated New Install: 1.1Gb Disk space</b>

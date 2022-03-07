@@ -48,7 +48,7 @@ Read more:
 
 Start the Docker Engine. Tune your settings. You do not need to do anything with Node at this point.
 
-[Feeling Lucky? Jump Quick Install](#quick-install)
+[Feeling Lucky? Jump to Quick Install](#quick-install)
 (It's a really good idea to read below first!)
 
 <div class="content-spacer-sm"></div>
