@@ -21,12 +21,10 @@ Using ChartJS and MySQL storage, we are able to chart out the vitals of the cont
 
 <div class="content-spacer-sm"></div>
 
-
 ### 1 Second Profiler
 The 1 Second Profiler connects to the Docker Engine API and reads live stats from the containers and then logs them into the database as a profile. This is useful for benchmarking your builds, tracking and monitoring them.  Profilings can be reviewed, replayed and exported.
 
 <div class="content-spacer-sm"></div>
-
 
 ### Activity Logs
 Dockermon logs when events are received from the Docker Engine. Such as container start, stop, pause, create, kill, remove.  Any events are logged to their related Containers, Images, Volumes, Networks, Hosts, etc. 

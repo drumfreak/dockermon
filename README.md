@@ -8,20 +8,29 @@
 
 ![Dockermon](https://drumfreak.github.io/dockermon/images/dockermon-preview.png?raw=true)
 
-Dockermon is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. This project also has a Companion Node/Nest "Host Launcher" App that runs to assist in managing docker. 
+[Dockermon](https://drumfreak.github.io/dockermon) is a Docker Host Monitor and Management system. It runs from a Docker Image as a container and communicates with the host via socket / HTTP connection. This project also has a Companion Node/Nest [Dockermon Host Launcher - Mac OS](https://drumfreak.github.io/dockermon/dockermon-host-launcher) that runs to assist in managing docker. 
 
 The Docker Hub Image [webfreakeric/dockermon](https://hub.docker.com/r/webfreakeric/dockermon) runs self contained and monitors your Docker via the [Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41) through Sockets and HTTP requests.
 
-Dockermon has worker jobs that collect stats for analyzing your containers. There's an intuitive interface and backend API that allows you to create, maintain, monitor, manage and do just about anything you need with Docker containers, images, volumes, networks, and various aspects of your Docker setup. Multi and Remote host control and monitoring is also possible!
+[Dockermon](https://drumfreak.github.io/dockermon) has worker jobs that collect stats for analyzing your containers. There's an intuitive interface and backend API that allows you to create, maintain, monitor, manage and do just about anything you need with Docker containers, images, volumes, networks, and various aspects of your Docker setup. Multi and Remote host control and monitoring is also possible!
 
 [Dockermon](https://drumfreak.github.io/dockermon) provides you with a blazing fast React/NextJS web interface to launch manage and view your docker system. Through the NestJS Host Companion included here, the web interface creates a socket connection and launches commands on your local machine. See Host Launcher section later.
 
 Read more:
 
+- [Dockermon Main](https://drumfreak.github.io/dockermon)
 - [Dockermon Features](https://drumfreak.github.io/dockermon/dockermon-features)
 - [Dockermon Inspiration](https://drumfreak.github.io/dockermon/dockermon-inspiration)
 - [Dockermon Backend Details](https://drumfreak.github.io/dockermon/dockermon-backend)
 - [Dockermon Frontend Details](https://drumfreak.github.io/dockermon/dockermon-frontend)
+- [Dockermon socat Socket Pipe](https://drumfreak.github.io/dockermon/dockermon-socat)
+- [Dockermon Container Image Build](https://drumfreak.github.io/dockermon/dockermon-container-build)
+- [Dockermon Container Init Process](https://drumfreak.github.io/dockermon/dockermon-init)
+- [Dockermon Container Github Updates](https://drumfreak.github.io/dockermon/dockermon-remote-updates)
+- [Dockermon Remote Host Management](https://drumfreak.github.io/dockermon/dockermon-remote-hosts)
+- [Dockermon Host Launcher - Mac OS](https://drumfreak.github.io/dockermon/dockermon-host-launcher)
+- [Dockermon FAQ](https://drumfreak.github.io/dockermon/dockermon-faq)
+
 
 <hr />
 
@@ -44,7 +53,6 @@ git clone https://github.com/drumfreak/dockermon.git
 cd dockermon
 cp .env.sample .env
 ```
-Now you've got the code. Let's do something with it.
 
 <hr />
 
@@ -64,9 +72,7 @@ The easiest way setup your dockermon container is to git clone the repo as menti
 | 3801   | Optional Dockermon Host Launcher Port Run by this source code, not the container ws://localhost:3801  |
 
 
-Let's get the Dockermon container running. Assuming Docker is running, you have the code and are inside the dockermon directory, we are ready to party.
-
- From Terminal, run:
+Let's get the Dockermon container running. While inside the dockermon directory you cloned, launch Terminal and run:
 
 ``` bash
 docker-compose -p "dockermon" -f docker-compose.yml up  --detach

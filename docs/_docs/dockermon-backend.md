@@ -44,21 +44,6 @@ Running in a separate Node process is Worker 2 aka "The Profiler".  This worker 
 
 The data collected by this is transmitted to the frontend and that's what you see in your charts when running profilers.   Every 10 seconds the data is saved to the database as data set.  Once the client disconnects from the profiler, or stops the profiler job, the data is saved and the job is terminated.
 
-
-<hr />
-
-#### Dev Notes:
-
-- [Docker Alpine Socat](https://github.com/alpine-docker/socat){:target="_blank"} is a good idea to potentially eliminate the need for external socat, however requires potentially setting up Docker Engine. Investigate this.
-
-``` bash
-docker run -d --restart=always \
-    -p 127.0.0.1:2376:2375 \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    alpine/socat \
-    tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock
-```
-
 <hr />
 
 ### Read more:
